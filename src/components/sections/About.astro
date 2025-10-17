@@ -1,0 +1,20 @@
+---
+ import profilepicture from "../../assets/profiel-foto-kevin.jpg";
+---
+
+<div class="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16 mb-16">
+  <div class="flex justify-start flex-col max-w-2xl">
+    <h1 class="flex items-center text-4xl font-bold">Over mij</h1>
+    <p class="mt-4 text-lg text-gray-700 dark:text-gray-700">
+      Hallo! Ik ben Kevin Tobben, een gepassioneerde webontwikkelaar 
+      met een liefde voor het creëren van mooie en functionele websites. 
+      Met ervaring in frontend  ontwikkeling, streef ik ernaar 
+      om gebruiksvriendelijke en efficiënte 
+      digitale ervaringen te leveren.
+    </p>
+  </div>
+  <div class="flex justify-end items-center">
+    <img id="profilepicture" src={profilepicture.src} alt="Foto van Kevin Tobben" class="w-64 h-64 rounded-full object-cover border-4 border-gray-300 shadow-lg"/>
+  </div>
+
+</div>

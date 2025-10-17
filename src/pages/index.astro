@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/sections/Navbar.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
+import Skills from '../components/sections/Skills.astro';
+import Projects from '../components/sections/Projects.astro';
+import Section from '../components/ui/Section.astro';
+---
+
+<Layout>
+	<Navbar />
+
+  <Section id="hero">
+    <Hero />
+  </Section>
+
+  <Section label="Over mij" level={2} id="about">
+    <About />
+  </Section>
+
+  <Section label="Skills" level={2} id="skills">
+    <Skills />
+  </Section>
+
+  <Section label="Projecten" level={2} id="projects">
+    <Projects />
+  </Section>
+
+  <Section label="Contact" level={2} id="contact">
+    <h2 class="text-4xl font-bold mb-4">Neem contact op</h2>
+    <p class="text-gray-600">Stuur me een bericht!</p>
+  </Section>
+</Layout>
