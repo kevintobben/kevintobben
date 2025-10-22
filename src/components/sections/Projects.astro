@@ -1,31 +1,33 @@
 ---
 import Card from "../ui/Card.astro";
+import rentopbouw from "../../assets/project-images/project_rentopbouw.png";
 
 ---
-
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-  <Card 
-    title="Project 1"
-    description="Een geweldig project"
-  />
+<div class="mx-auto max-w-6xl">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+    <Card 
+      title="Website: Rentop Bouw"
+      imageUrl={rentopbouw.src}
+    />
   <Card 
     title="Project 2"
-    description="Nog een geweldig project"
+    imageUrl={rentopbouw.src}    
   />
   <Card 
     title="Project 3"
-    description="Een geweldig project"
+    imageUrl={rentopbouw.src}
   />
   <Card 
     title="Project 4"
-    description="Nog een geweldig project"
+    imageUrl={rentopbouw.src}
   />
   <Card 
     title="Project 5"
-    description="Een geweldig project"
+    imageUrl={rentopbouw.src}
   />
-  <Card 
-    title="Project 6"
-    description="Nog een geweldig project"
-  />
+    <Card 
+      title="Project 6"
+      imageUrl={rentopbouw.src}
+    />
+  </div>
 </div>
