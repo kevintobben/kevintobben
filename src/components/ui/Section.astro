@@ -23,7 +23,7 @@ const { label, level = 2, class: className, id } = Astro.props;
         <SectionIndicator label={label} level={level} />
       </div>
       <!-- Section content -->
-      <div class="sm:pl-8 md:pl-16 lg:pl-32">
+      <div class="section-container sm:pl-8 md:pl-16 lg:pl-32">
         <slot />
       </div>
     </div>
