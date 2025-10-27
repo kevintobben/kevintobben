@@ -21,9 +21,9 @@ const { title, description, imageUrl, pillTitle } = Astro.props;
     )}
 
     <!-- Hover overlay -->
-    <div class="project-details absolute inset-0 bottom-0 left-0 bg-violet-200 text-center max-h-0 opacity-0 overflow-hidden p-1 transition-all duration-300 ease-in-out group-hover:max-h-full group-hover:opacity-100 flex flex-col justify-center gap-4 px-6">
-      <h3 class="project-title text-white font-semibold">{title}</h3>
-      {description && <p class="project-description text-white/90">{description}</p>}
+    <div class="project-details absolute inset-0 bottom-0 left-0 bg-slate-300 text-center max-h-0 opacity-0 overflow-hidden p-1 transition-all duration-300 ease-in-out group-hover:max-h-full group-hover:opacity-100 flex flex-col justify-center gap-4 px-6">
+      <h3 class="project-title text-black font-semibold">{title}</h3>
+      {description && <p class="project-description text-black/90">{description}</p>}
     </div>
   </div>
 
