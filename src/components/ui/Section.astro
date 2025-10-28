@@ -1,29 +1,25 @@
 ---
-import SectionIndicator from '../ui/SectionIndicator.astro';
-
 interface Props {
-  label?: string;
-  level?: 1 | 2 | 3;
-  class?: string;
   id?: string;
+  bgImage?: string;
 }
 
-const { label, level = 2, class: className, id } = Astro.props;
+const { id, bgImage } = Astro.props;
 ---
 
-<section class={`py-16 sm:py-20 ${className || ''}`} id={id}>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class={`py-16 sm:py-20 relative`} id={id}>
+  {bgImage && (
+    <img 
+      src={bgImage} 
+      alt="" 
+      fetchpriority="high" 
+      class="absolute top-0 left-0 w-full h-full -z-10 blur-3xl object-cover"
+    />
+  )}
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pl-40">
     <div class="relative">
-      <!-- Indicator links op desktop/tablet -->
-      <div class="absolute -left-8 sm:-left-16 md:-left-32 lg:-left-47 top-0 hidden sm:block">
-        <SectionIndicator label={label} level={level} />
-      </div>
-      <!-- Mobile indicator (gecentreerd) -->
-      <div class="sm:hidden flex justify-center mb-8">
-        <SectionIndicator label={label} level={level} />
-      </div>
-      <!-- Section content -->
-      <div class="section-container sm:pl-8 md:pl-16 lg:pl-32">
+      <div class="section-container">
         <slot />
       </div>
     </div>

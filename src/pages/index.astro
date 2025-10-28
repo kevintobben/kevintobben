@@ -5,30 +5,34 @@ import Hero from '../components/sections/Hero.astro';
 import About from '../components/sections/About.astro';
 import Skills from '../components/sections/Skills.astro';
 import Projects from '../components/sections/Projects.astro';
+import Contact from '../components/sections/Contact.astro';
 import Section from '../components/ui/Section.astro';
+import background2 from '../assets/background2.svg';
 ---
 
 <Layout>
 	<Navbar />
 
-  <Section id="hero">
+  <Section bgImage={background2.src} id="hero">
     <Hero />
   </Section>
 
-  <Section label="Over mij" level={2} id="about">
+  <Section id="about">
     <About />
   </Section>
 
-  <Section label="Skills" level={2} id="skills">
+  <Section id="skills">
+    <h3 class="text-3xl font-semibold text-gray-900 underline underline-offset-4 decoration-indigo-600">Skills</h3>
     <Skills />
   </Section>
 
-  <Section label="Projecten" level={2} id="projects">
+  <Section id="projects">
+    <h3 class="text-3xl font-semibold text-gray-900 underline underline-offset-4 decoration-indigo-600">Projecten</h3>
     <Projects />
   </Section>
 
-  <Section label="Contact" level={2} id="contact">
-    <h2 class="text-4xl font-bold mb-4">Neem contact op</h2>
-    <p class="text-gray-600">Stuur me een bericht!</p>
+  <Section id="contact">
+    <h3 class="text-3xl font-semibold text-gray-900 underline underline-offset-4 decoration-indigo-600">Neem contact op</h3>
+    <Contact />
   </Section>
 </Layout>
