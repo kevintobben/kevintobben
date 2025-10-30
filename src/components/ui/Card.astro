@@ -4,12 +4,16 @@ interface Props {
   description?: string;
   imageUrl?: string;
   pillTitle?: string;
+  projectUrl?: string;
 }
-const { title, description, imageUrl, pillTitle } = Astro.props;
+const { title, description, imageUrl, pillTitle, projectUrl = "" } = Astro.props;
 ---
 
 <!-- Card Root: relative, géén overflow-hidden zodat de pill buiten de box zichtbaar is -->
 <div class="project-card group relative mx-auto mt-5 md:mt-10 mb-10 w-full">
+
+  <!-- Hele card klikbaar op mobile/tablet (verborgen op md+) -->
+  <a href={projectUrl} target="_blank" rel="noopener noreferrer" class="block md:hidden absolute inset-0 z-10" aria-label={`Bekijk project ${title}`}></a>
 
   <!-- Card Frame: border + rounding + clipping voor image/overlay -->
   <div class="card-frame relative rounded-lg border-4 border-indigo-400 shadow-md overflow-hidden">
@@ -20,10 +24,11 @@ const { title, description, imageUrl, pillTitle } = Astro.props;
       </div>
     )}
 
-    <!-- Hover overlay -->
+    <!-- Hover overlay (alleen desktop) -->
     <div class="project-details absolute inset-0 bottom-0 left-0 bg-indigo-300 text-center max-h-0 opacity-0 overflow-hidden p-1 transition-all duration-300 ease-in-out group-hover:max-h-full group-hover:opacity-100 flex flex-col justify-center gap-4 px-6">
       <h3 class="project-title text-black font-semibold">{title}</h3>
       {description && <p class="project-description text-black/90">{description}</p>}
+      <a href={projectUrl} target="_blank" rel="noopener noreferrer" class="project-link inline-block bg-white text-indigo-600 font-semibold px-4 py-2 rounded-full shadow hover:bg-indigo-100 transition-colors duration-300">Bekijk project</a>
     </div>
   </div>
 
@@ -31,3 +36,4 @@ const { title, description, imageUrl, pillTitle } = Astro.props;
   <p class="project-title-pill absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-20 bg-indigo-400 px-6 py-2 rounded-full shadow-lg text-sm font-bold text-white whitespace-nowrap">
     {pillTitle ?? title}
   </p>
+</div>
