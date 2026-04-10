@@ -1,0 +1,36 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer__inner container">
+    <a href="/" class="footer__logo">Kevin Tobben<span>.</span></a>
+    <p>© {year} Kevin Tobben. Alle rechten voorbehouden.</p>
+    <a href="mailto:kevintobben@outlook.com" class="footer__email">
+      kevintobben@outlook.com
+    </a>
+  </div>
+</footer>
+
+<style>
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding: 2rem 0;
+}
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer__logo {
+  font-family: var(--font-display),sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.footer__logo span   { color: var(--color-accent); }
+.footer__inner p     { font-size: 0.85rem; color: var(--color-text-muted); }
+.footer__email       { font-size: 0.85rem; color: var(--color-accent); transition: opacity 0.2s; }
+.footer__email:hover { opacity: 0.7; }
+</style>
