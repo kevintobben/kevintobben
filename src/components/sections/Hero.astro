@@ -1,35 +1,69 @@
-<div class="w-full min-h-[40vh] flex flex-col justify-center mt-10 sm:mt-0">
-  
-  <!-- Kleine intro tekst -->
-  <p class="text-sm sm:text-base text-gray-600 font-medium mb-3 uppercase tracking-wide">
-    👋 Hallo, ik ben
-  </p>
+---
+---
 
-  <!-- Hoofdtitel met gradient -->
-  <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-4 text-gray-600">
-    Kevin Tobben
-  </h1>
-
-  <!-- Ondertitel -->
-  <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-600 mb-6">
-    Frontend Developer
-  </h2>
-
-  <!-- Beschrijving -->
-  <p class="text-lg sm:text-xl text-slate-800 mb-8 max-w-2xl">
-    Ik creëer mooie en functionele websites met moderne technologieën. 
-    Ontdek mijn projecten en vaardigheden in webontwikkeling.
-  </p>
-
-  <!-- Call-to-action buttons -->
-  <div class="flex flex-col sm:flex-row gap-4">
-    <a href="#projects" 
-       class="px-8 py-3 bg-slate-500 text-white font-semibold rounded-lg hover:bg-slate-600 transition-colors text-center">
-      Bekijk mijn werk
-    </a>
-    <a href="#contact" 
-       class="px-8 py-3 border-2 border-slate-500 text-slate-500 font-semibold rounded-lg hover:bg-purple-50 transition-colors text-center">
-      Neem contact op
-    </a>
+<section class="hero" id="home">
+  <div class="container">
+    <p class="section-label">Junior Frontend Developer</p>
+    <h1 class="hero__title">
+      Ik bouw snelle, toegankelijke website
+    </h1>
+    <p class="hero__desc">
+      Ik creëer mooie en functionele websites met moderne technologieën.
+      Ontdek mijn projecten en vaardigheden in webontwikkeling.
+    </p>
+    <div class="hero__actions">
+      <a href="/projecten" class="btn btn-primary">Bekijk mijn werk →</a>
+      <a href="/#contact"   class="btn btn-outline">Neem contact op</a>
+    </div>
   </div>
-</div>
+</section>
+
+<style>
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero > .container {
+  width: 100%;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -15%;
+  right: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(69,125,88,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero__title {
+  font-size: clamp(3rem, 9vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+}
+.hero__desc {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 485px;
+  margin-bottom: 2.5rem;
+}
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+}
+</style>

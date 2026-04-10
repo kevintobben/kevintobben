@@ -1,38 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/sections/Navbar.astro';
 import Hero from '../components/sections/Hero.astro';
 import About from '../components/sections/About.astro';
 import Skills from '../components/sections/Skills.astro';
-import Projects from '../components/sections/Projects.astro';
+import RecentProjects from '../components/sections/RecentProjects.astro';
 import Contact from '../components/sections/Contact.astro';
-import Section from '../components/ui/Section.astro';
-import background2 from '../assets/background2.svg';
 ---
 
-<Layout>
-	<Navbar />
-
-  <Section bgImage={background2.src} id="hero">
-    <Hero />
-  </Section>
-
-  <Section id="about">
-    <About />
-  </Section>
-
-  <Section id="skills">
-    <h3 class="text-3xl font-semibold text-gray-900 underline underline-offset-4 decoration-indigo-600">Skills</h3>
-    <Skills />
-  </Section>
-
-  <Section id="projects">
-    <h3 class="text-3xl font-semibold text-gray-900 underline underline-offset-4 decoration-indigo-600">Projecten</h3>
-    <Projects />
-  </Section>
-
-  <Section id="contact">
-    <h3 class="text-3xl font-semibold text-gray-900 underline underline-offset-4 decoration-indigo-600">Neem contact op</h3>
-    <Contact />
-  </Section>
+<Layout title="Kevin Tobben — Frontend Developer">
+  <Hero />
+  <About />
+  <Skills />
+  <RecentProjects />
+  <Contact />
 </Layout>

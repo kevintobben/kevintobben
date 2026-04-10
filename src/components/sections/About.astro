@@ -1,27 +1,70 @@
 ---
- import profilepicture from "../../assets/profiel-foto-kevin.jpg";
 ---
 
-<div class="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16 mb-16">
-  <div class="flex justify-start flex-col max-w-2xl">
-    <h3 class="flex items-center text-3xl font-semibold text-gray-900 underline underline-offset-4 decoration-indigo-500">Over mij</h3>
-    <p class="mt-6 text-lg text-gray-900 leading-relaxed">
-      Hallo! Ik ben <span class="font-semibold text-gray-900">Kevin Tobben</span>, een gepassioneerde frontend developer 
-      met een focus op het bouwen van gebruiksvriendelijke webapplicaties.
-    </p>
-    <p class="mt-4 text-lg text-gray-900 leading-relaxed">
-      Ik werk met moderne technologieën zoals <span class="font-medium text-indigo-600">Astro, React</span>,
-      <span class="font-medium text-indigo-600">TypeScript</span> en 
-      <span class="font-medium text-indigo-600">Tailwind CSS</span> om digitale ervaringen 
-      te creëren die niet alleen mooi zijn, maar ook snel en toegankelijk.
-    </p>
-    <p class="mt-4 text-lg text-gray-900 leading-relaxed">
-      Wanneer ik niet aan het coderen ben, ben ik bezig met het leren van nieuwe technologieën 
-      en het verbeteren van mijn skills. Ik geloof in <span class="font-medium">clean code</span> en 
-      <span class="font-medium">continu leren</span>.
-    </p>
+<section class="about" id="over">
+  <div class="container">
+    <div class="about__grid">
+
+      <div class="about__text">
+        <p class="section-label">Over mij</p>
+        <h2 class="about__title">
+          Front-end<br><span class="accent">Developer </span>
+        </h2>
+        <p>
+          Hallo! Ik ben <strong>Kevin Tobben</strong>, een gepassioneerde frontend developer
+          met een focus op het bouwen van gebruiksvriendelijke webapplicaties.
+        </p>
+        <p>
+          Ik werk met moderne technologieën zoals <span class="pink"> Astro, React, TypeScript en Tailwind CSS</span>
+          om digitale ervaringen te creëren die niet alleen mooi zijn, maar ook snel en toegankelijk.
+        </p>
+        <p>
+          Buiten het werk om houd ik mezelf scherp met <span class="pink">hardlopen</span> en tijd doorbrengen met <span class="pink">vrienden.</span>
+        </p>
+
+      </div>
+
+      <div class="about__image">
+        <img src="/images/profiel-foto-kevin.jpg" alt="Kevin Tobben" loading="lazy" />
+      </div>
+
+    </div>
   </div>
-  <div class="flex justify-end items-center flex-shrink-0">
-    <img id="profilepicture" src={profilepicture.src} alt="Foto van Kevin Tobben" class="w-64 h-64 rounded-full object-cover border-4 border-gray-500 shadow-lg"/>
-  </div>
-</div>
+</section>
+
+<style>
+.about { padding: var(--section-gap) 0; }
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.about__title {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  margin-bottom: 1.5rem;
+}
+.about__text p {
+  margin-bottom: 1rem;
+}
+.about__text p strong { color: var(--color-text); }
+
+.about__image {
+  aspect-ratio: 4/5;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--color-accent);
+  border: 1px solid var(--color-border);
+}
+.about__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .about__grid  { grid-template-columns: 1fr; gap: 3rem; }
+  .about__image { order: -1; max-width: 280px; }
+}
+</style>

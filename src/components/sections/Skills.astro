@@ -1,108 +1,92 @@
 ---
-import Card from "../ui/SkillsCard.astro";
-// Frontend Icons
-import HtmlIcon from "../../assets/icons/html5.svg";
-import JsIcon from "../../assets/icons/javascript.svg";
-import TsIcon from "../../assets/icons/typescript.svg";
-import ReactIcon from "../../assets/icons/react_dark.svg";
-import AstroIcon from "../../assets/icons/astro-icon-light.svg";
-import WordpressIcon from "../../assets/icons/wordpress_logo.svg";
-//  Styling Icons
-import CssIcon from "../../assets/icons/css.svg";
-import SassIcon from "../../assets/icons/sass.svg";
-import StyledComponentsIcon from "../../assets/icons/styledcomponents.svg";
-import FigmaIcon from "../../assets/icons/figma.svg";
-import TailwindIcon from "../../assets/icons/tailwindcss.svg";
-import BootstrapIcon from "../../assets/icons/bootstrap.svg";
-// Miscellaneous Icons
-import GitIcon from "../../assets/icons/git.svg";
-import AzureIcon from "../../assets/icons/azure.svg";
-import JestIcon from "../../assets/icons/jest.svg";
-import ReactTestingLibraryIcon from "../../assets/icons/reactrouter.svg";
-import RestApiIcon from "../../assets/icons/fastapi.svg";
---- 
-<div class="skills-container flex flex-col md:flex-col gap-8 md:gap-16 mb-16">
-  <div class="frontend-container my-5 bg-white/10 backdrop-blur-md rounded-lg inset-shadow-sm inset-shadow-slate-300 p-6">
-    <h3 class="text-2xl font-semibold underline underline-offset-4 decoration-indigo-600">Frontend</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <Card 
-        title="HTML"
-        imageUrl={HtmlIcon.src}
-      />
-      <Card 
-        title="Javascript"
-        imageUrl={JsIcon.src}
-      />
-      <Card 
-        title="Typescript"
-        imageUrl={TsIcon.src}
-      />
-      <Card 
-        title="React"
-        imageUrl={ReactIcon.src}
-      />
-      <Card 
-        title="Astro.js"
-        imageUrl={AstroIcon.src}
-      />
-      <Card
-        title="Wordpress"
-        imageUrl={WordpressIcon.src}
-      />
+const categories = [
+  {
+    label: 'Frontend',
+    skills: ['HTML', 'JavaScript', 'Astro.js', 'TypeScript', 'React', 'WordPress'],
+  },
+  {
+    label: 'Styling',
+    skills: ['CSS', 'Sass', 'Bootstrap', 'Tailwind CSS', 'Figma', 'Styled-Components'],
+  },
+  {
+    label: 'Tools',
+    skills: ['Git', 'Azure', 'Jest', 'React Testing Library', 'REST APIs'],
+  },
+];
+---
+
+<section class="skills" id="skills">
+  <div class="container">
+    <p class="section-label">Vaardigheden</p>
+    <h2 class="skills__title">Mijn tech stack</h2>
+
+    <div class="skills__grid">
+      {categories.map(cat => (
+        <div class="skill-cat">
+          <h3 class="skill-cat__name">{cat.label}</h3>
+          <div class="skill-cat__tags">
+            {cat.skills.map(s => <span class="tag">{s}</span>)}
+          </div>
+        </div>
+      ))}
     </div>
   </div>
-  <div class="styling-container my-5 bg-white/10 backdrop-blur-md rounded-lg inset-shadow-sm inset-shadow-slate-300 p-6">
-    <h3 class="text-2xl font-semibold underline underline-offset-4 decoration-indigo-600">Styling</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <Card 
-        title="CSS"
-        imageUrl={CssIcon.src}
-      />
-      <Card 
-        title="Sass"
-        imageUrl={SassIcon.src}
-      />
-      <Card 
-        title="Styled-Components"
-        imageUrl={StyledComponentsIcon.src}
-      />
-      <Card 
-        title="Figma"
-        imageUrl={FigmaIcon.src}
-      />
-      <Card 
-        title="Tailwind CSS"
-        imageUrl={TailwindIcon.src}
-      />
-      <Card 
-        title="Bootstrap"
-        imageUrl={BootstrapIcon.src}
-      />
-    </div>
-  </div>
-    <div class="tools-container mt-5 my-5 bg-white/10 backdrop-blur-md rounded-lg inset-shadow-sm inset-shadow-slate-300 p-6">
-      <h3 class="text-2xl font-semibold underline underline-offset-4 decoration-indigo-600">Tools</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <Card 
-          title="Git"
-          imageUrl={GitIcon.src}
-        />
-        <Card 
-          title="Azure"
-          imageUrl={AzureIcon.src}
-        />
-        <Card 
-          title="Jest"
-          imageUrl={JestIcon.src}
-        />
-        <Card 
-          title="React Testing Library"
-          imageUrl={ReactTestingLibraryIcon.src}
-        />
-        <Card 
-          title="REST APIs"
-          imageUrl={RestApiIcon.src}
-        />
-      </div>
-    </div>
-</div>
+</section>
+
+<style>
+.skills {
+  padding: var(--section-gap) 0;
+}
+
+.skills__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 3rem;
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.skill-cat {
+  background: var(--color-mid-green);
+  border: 1px solid var(--color-accent);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: border-color 0.2s;
+}
+.skill-cat:hover { border-color: var(--color-cta); }
+
+.skill-cat__name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-bg);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.skill-cat__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0.35rem 0.85rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-mid-green);
+  border-radius: 2rem;
+  font-size: 0.83rem;
+  color: var(--color-text-muted);
+  transition: all 0.2s;
+}
+.tag:hover {
+  background: rgba(210, 255, 170, 0.14);
+  color: var(--color-text);
+  border-color: rgba(210, 255, 170, 0.4);
+}
+
+@media (max-width: 900px) { .skills__grid { grid-template-columns: 1fr; } }
+</style>
