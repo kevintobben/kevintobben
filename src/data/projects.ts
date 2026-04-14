@@ -34,7 +34,7 @@ export const projects: Project[] = [
     screenshots: [
       '/images/project-images/project_rentopbouw.png',
       '/images/project-images/project_rentopbouw.png',
-      '/images/project-images/psi_rentopbouw.png',
+      '/images/psi_rentopbouw.png',
     ],
     url: 'https://rentopbouw.kevintobben.nl',
     github: 'https://github.com/kevintobben/rentop-bouw-vanilla',
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     tags: ['Wordpress'],
     image : '/images/project-images/project_hekwerkmeesters.png',
     screenshots: [
-      '/images/project-images/psi_hekwerkmeesters.png',
+      '/images/psi_hekwerkmeesters.png',
     ],
     url: 'https://hekwerkmeesters.nl',
   },
