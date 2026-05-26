@@ -19,7 +19,7 @@ export const projects: Project[] = [
     tags: ['Astro', 'TypeScript', 'Tailwind CSS'],
     image: '/images/project-images/project_portfolio.png',
     screenshots: [
-      '/images/PSI_kevintobben.png',
+      '/images/home_kevintobben.png',
     ],
     url: 'https://kevintobben.nl',
     github: 'https://github.com/kevintobben/kevintobben',
@@ -32,9 +32,7 @@ export const projects: Project[] = [
     tags: ['HTML', 'CSS', 'Responsive'],
     image: '/images/project-images/project_rentopbouw.png',
     screenshots: [
-      '/images/project-images/project_rentopbouw.png',
-      '/images/project-images/project_rentopbouw.png',
-      '/images/psi_rentopbouw.png',
+      '/images/home_rentopbouw.png',
     ],
     url: 'https://rentopbouw.kevintobben.nl',
     github: 'https://github.com/kevintobben/rentop-bouw-vanilla',
@@ -42,13 +40,14 @@ export const projects: Project[] = [
   {
     slug: 'hekwerkmeesters',
     title: 'Hekwerkmeesters',
-    description: 'Wordpress website gemaakt voor een hekwerk bedrijf',
-    longDescription: 'Ik heb deze website gemaakt voor mijn neefje zijn eigen bedrijf in hekwerken. ' +
-        'Ik heb deze website gemaakt in Wordpress, omdat dit voor hem makkelijk te beheren is.',
+    description: 'Wordpress website gebouwd voor een lokaal hekwerkbedrijf',
+    longDescription: 'Gebouwd in WordPress met Astra + Spectra voor een lokaal hekwerkbedrijf. ' +
+        'Bewust gekozen voor een CMS dat de klant zelf kan beheren. WhatsApp-integratie voor ' +
+        'directe leadgeneratie.',
     tags: ['Wordpress'],
     image : '/images/project-images/project_hekwerkmeesters.png',
     screenshots: [
-      '/images/psi_hekwerkmeesters.png',
+      '/images/home_hekwerkmeesters.png',
     ],
     url: 'https://hekwerkmeesters.nl',
   },
